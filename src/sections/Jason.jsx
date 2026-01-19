@@ -1,41 +1,41 @@
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 const Jason = () => {
   useGSAP(() => {
-    gsap.set(".jason", {
-      marginTop: "-80vh",
+    gsap.set('.jason', {
+      marginTop: '-80vh',
     });
 
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: ".jason",
-          start: "top 90%",
-          end: "10% center",
+          trigger: '.jason',
+          start: 'top 90%',
+          end: '10% center',
           scrub: 2,
         },
       })
-      .to(".first-vd", {
+      .to('.first-vd', {
         opacity: 0,
         duration: 1,
-        ease: "power1.inOut",
+        ease: 'power1.inOut',
       });
 
     gsap.to(
-      ".jason .img-box",
+      '.jason .img-box',
       {
         scrollTrigger: {
-          trigger: ".jason",
-          start: "top center",
-          end: "80% center",
+          trigger: '.jason',
+          start: 'top center',
+          end: '80% center',
           scrub: 2,
         },
         y: -300,
         duration: 1,
-        ease: "power1.inOut",
+        ease: 'power1.inOut',
       },
-      "<",
+      '<'
     );
   });
 

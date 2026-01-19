@@ -1,6 +1,6 @@
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { useRef } from 'react';
 
 const PostCard = () => {
   const videoRef = useRef(null);
@@ -8,9 +8,9 @@ const PostCard = () => {
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".post-card",
-        start: "top center",
-        end: "bottom center",
+        trigger: '.post-card',
+        start: 'top center',
+        end: 'bottom center',
         scrub: true,
       },
     });
@@ -21,9 +21,9 @@ const PostCard = () => {
         {
           currentTime: videoRef.current.duration,
           duration: 3,
-          ease: "power1.inOut",
+          ease: 'power1.inOut',
         },
-        "<",
+        '<'
       );
     };
   });

@@ -1,41 +1,41 @@
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 const Lucia = () => {
   useGSAP(() => {
-    gsap.set(".lucia-life", {
-      marginTop: "-80vh",
+    gsap.set('.lucia-life', {
+      marginTop: '-80vh',
     });
 
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: ".lucia-life",
-          start: "top 80%",
-          end: "10% center",
+          trigger: '.lucia-life',
+          start: 'top 80%',
+          end: '10% center',
           scrub: 2,
         },
       })
-      .to(".second-vd", {
+      .to('.second-vd', {
         opacity: 0,
         duration: 1,
-        ease: "power1.inOut",
+        ease: 'power1.inOut',
       });
 
     gsap.to(
-      ".lucia-life .img-box",
+      '.lucia-life .img-box',
       {
         scrollTrigger: {
-          trigger: ".lucia-life",
-          start: "top center",
-          end: "80% center",
+          trigger: '.lucia-life',
+          start: 'top center',
+          end: '80% center',
           scrub: 2,
         },
         y: -200,
         duration: 1,
-        ease: "power1.inOut",
+        ease: 'power1.inOut',
       },
-      "<",
+      '<'
     );
   });
 

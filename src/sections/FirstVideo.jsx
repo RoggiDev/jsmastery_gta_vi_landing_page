@@ -1,36 +1,36 @@
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { useRef } from 'react';
 
 const FirstVideo = () => {
   const videoRef = useRef(null);
 
   useGSAP(() => {
-    gsap.set(".first-vd-wrapper", {
-      marginTop: "-150vh",
+    gsap.set('.first-vd-wrapper', {
+      marginTop: '-150vh',
       opacity: 0,
     });
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".first-vd-wrapper",
-        start: "top top",
-        end: "+=200% top",
+        trigger: '.first-vd-wrapper',
+        start: 'top top',
+        end: '+=200% top',
         scrub: true,
         pin: true,
       },
     });
 
-    tl.to(".hero-section", {
+    tl.to('.hero-section', {
       delay: 0.5,
       opacity: 0,
-      ease: "power1.inOut",
+      ease: 'power1.inOut',
     });
 
-    tl.to(".first-vd-wrapper", {
+    tl.to('.first-vd-wrapper', {
       opacity: 1,
       duration: 2,
-      ease: "power1.inOut",
+      ease: 'power1.inOut',
     });
 
     videoRef.current.onloadedmetadata = () => {
@@ -39,9 +39,9 @@ const FirstVideo = () => {
         {
           currentTime: videoRef.current.duration,
           duration: 3,
-          ease: "power1.inOut",
+          ease: 'power1.inOut',
         },
-        "<",
+        '<'
       );
     };
   }, []);
