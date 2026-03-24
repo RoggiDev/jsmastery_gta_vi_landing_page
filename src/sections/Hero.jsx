@@ -4,12 +4,13 @@ import { useMaskSettings } from '../../constants';
 import ComingSoon from './ComingSoon';
 
 const Hero = () => {
-  const { initialMaskPos, initialMaskSize, maskPos, maskSize } =
+  const { initialMaskPos, initialMaskSize, maskSize, maskPos } =
     useMaskSettings();
 
   useGSAP(() => {
     gsap.set('.mask-wrapper', {
       maskPosition: initialMaskPos,
+      WebkitMaskPosition: initialMaskPos,
       maskSize: initialMaskSize,
     });
 
@@ -30,6 +31,15 @@ const Hero = () => {
     tl.to('.fade-out', { opacity: 0, ease: 'power1.inOut' })
       .to('.scale-out', { scale: 1, ease: 'power1.inOut' })
       .to('.mask-wrapper', { maskSize, ease: 'power1.inOut' }, '<')
+      .to(
+        '.mask-wrapper',
+        {
+          maskPosition: maskPos,
+          WebkitMaskPosition: maskPos,
+          ease: 'power1.inOut',
+        },
+        '>-0.2'
+      )
       .to('.mask-wrapper', { opacity: 0 })
       .to(
         '.overlay-logo',
@@ -79,7 +89,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div>
+      <div className="relative w-full h-full">
         <img
           src="/images/big-hero-text.svg"
           alt="logo"
